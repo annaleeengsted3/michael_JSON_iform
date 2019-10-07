@@ -48,3 +48,28 @@ header img {
   display: inline-flex;
   background-repeat: no-repeat;
 }
+#mainheading {
+  margin-top: 2em;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  background-color: #f4f4f4;
+}
+main img {
+  width: 120px;
+}
+/* SLIDESHOW */
+.mySlides {
+  display: none;
+}
+.w3-left,
+.w3-right,
+.w3-badge {
+  cursor: pointer;
+}
+.w3-badge {
+  height: 13px;
+  width: 13px;
+  padding: 0;
+}
