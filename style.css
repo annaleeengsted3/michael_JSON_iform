@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --checkmark-icon: url("img/checkbox-homemade.png");
+}
 img {
   width: 100%;
 }
@@ -43,18 +46,26 @@ header img {
   content: "";
   width: 20px;
   height: 20px;
-  background-image: url("img/checkbox.png");
+  background-image: var(--checkmark-icon);
   background-size: contain;
   display: inline-flex;
   background-repeat: no-repeat;
 }
+main {
+  background-color: #f4f4f4;
+}
 #mainheading {
   margin-top: 2em;
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 10px;
+  margin-left: 0.5em;
+
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  background-color: #f4f4f4;
+}
+.column-right {
+  text-align: right;
+  margin-right: 0.5em;
 }
 main img {
   width: 120px;
@@ -72,4 +83,123 @@ main img {
   height: 13px;
   width: 13px;
   padding: 0;
+}
+.w3-display-bottommiddle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+}
+.w3-display-container {
+  position: relative;
+  margin-bottom: 4vw;
+}
+.w3-badge,
+.w3-tag {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.w3-badge {
+  border-radius: 50%;
+  height: 16px;
+  width: 5px;
+}
+.w3-white {
+  background-color: white;
+}
+.w3-white,
+.w3-hover-white:hover {
+  color: #000 !important;
+  background-color: #fff !important;
+}
+.w3-transparent,
+.w3-hover-none:hover {
+  background-color: transparent !important;
+}
+.w3-hover-none:hover {
+  box-shadow: none !important;
+}
+.w3-border {
+  border: 1px solid #ccc !important;
+}
+.w3-left {
+  float: left !important;
+  color: #ffff;
+  margin: 0 0 2em 1em;
+  font-size: 1.5rem;
+}
+.w3-right {
+  float: right !important;
+  color: #ffff;
+  margin: 0 1em 2em 0;
+  font-size: 1.5rem;
+}
+
+.w3-center {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+}
+/* Slide slut */
+#CTA {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  grid-template-rows: repeat(3, 1fr);
+}
+.bestil {
+  grid-row: 2;
+  grid-column: 1 / span 4;
+  padding: 3vw 10vw 3vw 10vw;
+  background-color: #97be0c;
+  text-align: center;
+  text-decoration: none;
+  color: #ffff;
+  margin: 0 2em 0 2em;
+}
+#CTA h3 {
+  grid-column: 1;
+  margin-left: 2em;
+  align-self: end;
+}
+#CTA .savings {
+  grid-column: 4;
+  float: right;
+  margin-right: 2em;
+  align-self: end;
+}
+#CTA .porto {
+  font-size: 0.6rem;
+  grid-row: 3;
+  grid-column: 3 / span 4;
+}
+
+.offerings {
+  display: grid;
+  grid-gap: 20px 0;
+}
+
+li {
+  position: relative;
+  display: grid;
+  grid: auto / repeat(2, auto);
+  justify-content: start;
+  grid-gap: 10px;
+  font-size: 17px;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+li:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: var(--checkmark-icon);
+  background-size: contain;
+  display: inline-flex;
+  background-repeat: no-repeat;
 }
