@@ -45,6 +45,10 @@ function listClickController(event) {
     showStepSize();
   } else if (element.getAttribute("data-action") == "show_subs") {
     showSubs();
+  } else if (element.getAttribute("data-action") == "show_delivery") {
+    showDelivery();
+  } else if (element.getAttribute("data-action") == "show_payment") {
+    showPayment();
   }
 }
 
@@ -72,4 +76,16 @@ function showSubs() {
       this.style.border = "2px groove var(--color-purple)";
     });
   });
+}
+
+//JOSE'S DEL
+function showDelivery() {
+  document.querySelector("#step_subscription").style.display = "none";
+  document.querySelector("#step_delivery").style.display = "block";
+}
+
+//NICKLAS' DEL
+function showPayment() {
+  document.querySelector("#step_delivery").style.display = "none";
+  document.querySelector("#step_payment").style.display = "block";
 }

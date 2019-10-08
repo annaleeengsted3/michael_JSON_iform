@@ -443,7 +443,228 @@ article h4 {
 /********** ANNALEE SLUT ********/
 
 /********** JOSE SKRIV HER ********/
+#step_delivery {
+  display: none;
+}
 
+.no-robots form {
+  position: relative;
+  display: block;
+  margin: 10vw;
+  box-sizing: border-box;
+}
+.no-robots form .row {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 35px;
+  margin: 25px 0 25px;
+  padding: 0;
+}
+.no-robots form .row .field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  margin: 0;
+  padding: 5px;
+  background-color: transparent;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  /*border-bottom: 0.0625rem solid lightgray;*/
+  z-index: 1;
+}
+.no-robots form .row .field::-webkit-input-placeholder {
+  color: var(--color-gray);
+  font-weight: 100;
+}
+.no-robots form .row .field:focus {
+  border-bottom: none;
+}
+.no-robots form .row .field:focus ~ label:before,
+.no-robots form .row .field:valid ~ label:before {
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+}
+.no-robots form .row .field:focus ~ label span,
+.no-robots form .row .field:valid ~ label span,
+.no-robots form .row .field:invalid:not(:placeholder-shown) ~ label span {
+  top: -10px;
+  left: 0;
+  font-size: 12px;
+  color: #5c1182;
+}
+.no-robots form .row label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  z-index: 0;
+}
+.no-robots form .row label:before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0;
+  /*transition: width 250ms;*/
+  z-index: 2;
+}
+.no-robots form .row label span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: var(--color-gray);
+  z-index: 5;
+  transition: all 250ms;
+}
+.no-robots form .row.problem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.no-robots form .row.problem > span {
+  margin-right: 5px;
+}
+.no-robots form .row.problem > .answer {
+  width: 50px;
+  padding: 3px;
+  margin-right: 3px;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid lightgray;
+  border-left: none;
+  text-align: center;
+}
+
+/* .no-robots form .row.problem > .answer:active,
+.no-robots form .row.problem > .answer:focus {
+  border-bottom: 1px solid #2ecc71;
+} */
+
+.no-robots form button {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  margin-top: 10vw;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  background-color: #97be0c;
+  border: none;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+.no-robots form button:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #5c1182;
+  /*transition: width 250ms;*/
+  z-index: -1;
+}
+.no-robots form button:hover {
+  color: white;
+}
+.no-robots form button:hover:before {
+  width: 100%;
+}
+
+/**** Postal/city ****/
+
+/* .postal {
+  flex: 0 1 100px;
+}
+
+.city {
+  flex: 1 1 auto;
+} */
+
+/* VALIDATION STUFF */
+
+/* input:invalid:not(:placeholder-shown) {
+border-color: red;
+}
+
+input:valid:not(:focus) {
+border-color: green;
+}
+
+input {
+border: 1px grey solid;
+} */
+
+label,
+input,
+.instruction {
+  transition: 0.3s;
+  display: block;
+}
+
+/* .field {
+  display: block;
+  outline: none;
+  border-width: 2px;
+  border: 1px lightgrey solid;
+  padding: 5px 10px;
+} */
+
+.field:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: red;
+  /* box-shadow: 0 0 0 1px #ffc025; */
+  background-position-x: calc(100% - 16px);
+  background-position-y: 50%;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  color: red;
+  background-image: var(--error);
+
+  animation: shake 0.125s 2 backwards;
+}
+
+/* input:invalid:not(:placeholder-shown):not(:focus) ~ .instruction {
+  opacity: 1;
+} */
+
+.field:valid:not(:placeholder-shown):not(:focus) {
+  background-position-x: calc(100% - 16px);
+  background-position-y: 50%;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-image: url(img/checkmark.png);
+}
+
+@keyframes shake {
+  50% {
+    transform: translateX(12px);
+  }
+}
+
+label {
+  font-weight: 400;
+}
+
+:root {
+  --error: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><g fill='none' fill-rule='evenodd'><circle cx='10' cy='10' r='10' fill='crimson'/><path fill='%23FFFFFF' d='M9,6.84848485 C9,5.93939394 9.4,5.33333333 10,5.33333333 C10.6,5.33333333 11,5.93939394 11,6.84848485 L11,10.4848485 C11,11.3939394 10.6,12 10,12 C9.4,12 9,11.3939394 9,10.4848485 L9,6.84848485 Z M10,14.6666667 C9.41666667,14.6666667 9,14.25 9,13.6666667 C9,13.0833333 9.41666667,12.6666667 10,12.6666667 C10.5833333,12.6666667 11,13.0833333 11,13.6666667 C11,14.25 10.5833333,14.6666667 10,14.6666667 L10,14.6666667 Z'/></g></svg>");
+}
+
+input:focus {
+  background-position-x: calc(100% - 16px);
+  background-position-y: 50%;
+  background-size: 10x 10px;
+  background-repeat: no-repeat;
+}
 /********** JOSE SLUT ********/
 
 /********** NICKLAS HER ********/
