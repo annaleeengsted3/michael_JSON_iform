@@ -11,15 +11,22 @@ input {
 
 :root {
   --color-pink: #ff3366;
-  --color-lilla: #5c1182;
+  --color-purple: #5c1182;
   --color-bggray: #f4f4f4;
   --color-gray: #888b8d;
   --color-green: #97be0c;
   --checkmark-icon: url("img/checkbox-homemade.png");
 }
 
+.hide {
+  display: none;
+}
+
 img {
   width: 100%;
+}
+h6 {
+  font-size: 1rem;
 }
 header {
   padding: 1em 0em 1em 0em;
@@ -84,7 +91,7 @@ main {
 main img {
   width: 120px;
 }
-/* SLIDESHOW */
+/* SLIDESHOW  from W3Schools at link: LINK HERE*/
 .mySlides {
   display: none;
 }
@@ -159,7 +166,7 @@ main img {
   width: auto;
   text-align: center;
 }
-/* Slide slut */
+/*************** Slide slut ************/
 #CTA {
   display: grid;
   grid-template-columns: auto 1fr 1fr auto;
@@ -221,7 +228,7 @@ article h4 {
   margin: 2em 2em 2em 2em;
 }
 
-/* BASKET */
+/********************** BASKET *************/
 .basket_bg {
   /* visibility: hidden; */
   height: 100vh;
@@ -229,14 +236,34 @@ article h4 {
   position: fixed;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.384);
+  display: none;
 }
 .basket_wrapper {
   background-color: white;
   width: 100vw;
-  /* height: 60%; */
+  height: 95%;
   position: absolute;
-  bottom: 0;
+  /* bottom: 0; */
+  bottom: -100vh;
+  overflow: scroll;
 }
+
+.slide {
+  animation: slide_up 2s ease;
+}
+
+@keyframes slide_up {
+  0% {
+    transform: translateY(0vh);
+    /* bottom: -100vh; */
+  }
+
+  100% {
+    transform: translateY(-100vh);
+    /* bottom: 0; */
+  }
+}
+
 .flow_overview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -290,24 +317,26 @@ article h4 {
   border-top: 1px solid gray;
 }
 
+/********************** Step: Size  *************/
+
 #step_size {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-#step_size > .banner {
+.banner {
   grid-column: span 2;
   background-color: var(--color-bggray);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
 }
-#step_size > .banner img {
+.banner img {
   width: 20px;
   justify-self: end;
 }
 #step_size > img {
-  width: 80%;
+  width: 70%;
   grid-column: span 2;
   justify-self: center;
 }
@@ -316,29 +345,100 @@ article h4 {
   justify-self: center;
   margin: 20px 0;
 }
-#step_size > button {
+/* #step_size > button {
   border: 2px solid #e9e8e8;
   background-color: white;
   margin: 10px 20px;
   height: 40px;
   border-radius: 5px;
   font-weight: 700;
+} */
+#step_size .field {
+  border: 2px solid #e9e8e8;
+  background-color: white;
+  margin: 10px 20px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 700;
+  display: relative;
+}
+
+#step_size input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+#step_size label {
+  display: block;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 2px solid #e9e8e8;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+#step_size input:checked + label {
+  border-color: #5c1182;
 }
 
 #step_size > button.submit {
   grid-column: span 2;
-  margin: 40px 20px;
+  margin: 30px 20px;
   background-color: var(--color-green);
   border: none;
   color: white;
   height: 50px;
   font-size: 1.2rem;
-}
-h6 {
-  font-size: 1rem;
+  border-radius: 5px;
 }
 
 /********** ANNALEE HER ********/
+#step_subscription {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  display: none;
+}
+
+#step_subscription legend {
+  text-align: center;
+}
+#step_subscription fieldset {
+  border: 2px groove var(--color-bggray);
+  text-align: center;
+  padding: 20px;
+  margin: 20px 10px;
+  border-radius: 5px;
+}
+#step_subscription form {
+  grid-column: span 2;
+  margin: 30px 10px;
+}
+#step_subscription button.submit {
+  grid-column: span 2;
+  margin: 10px 20px;
+  background-color: var(--color-green);
+  border: none;
+  color: white;
+  height: 50px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+#step_subscription #plan1 {
+  border: 2px groove var(--color-purple);
+}
+
+#step_subscription .bold {
+  font-weight: 700;
+}
+#step_subscription .pink {
+  color: var(--color-pink);
+}
 
 /********** ANNALEE SLUT ********/
 

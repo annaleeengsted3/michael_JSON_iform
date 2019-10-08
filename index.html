@@ -27,7 +27,7 @@
         </section>
         <section class="basket">
           <h6>Din Kurv</h6>
-          <p class="basket_item">Lorem ipsum</p>
+          <p class="basket_item">4nr. iFORM + ActiveFit fiberjakke</p>
           <p class="price">149,96 kr.</p>
           <p></p>
           <p class="basket_item">Porto</p>
@@ -38,7 +38,7 @@
         </section>
 
         <section class="flow_content">
-          <section id="step_size">
+          <section id="step_size" class="hide">
             <div class="banner">
               <div></div>
               <h6>ActiveFit FiberJakke</h6>
@@ -46,14 +46,59 @@
             </div>
             <img src="img/jacket.png" alt="ActiveFit FiberJacket" />
             <p>Vælg størrelse</p>
-            <button>S</button>
+
+            <div class="field">
+              <input type="radio" id="S" name="size" value="S" />
+              <label for="S">S</label>
+            </div>
+            <div class="field">
+              <input type="radio" id="M" name="size" value="M" />
+              <label for="M">M</label>
+            </div>
+            <div class="field">
+              <input type="radio" id="L" name="size" value="L" />
+              <label for="L">L</label>
+            </div>
+            <div class="field">
+              <input type="radio" id="XL" name="size" value="XL" />
+              <label for="XL">XL</label>
+            </div>
+
+            <!-- <button>S</button>
             <button>M</button>
             <button>L</button>
-            <button>XL</button>
-            <button class="submit">Videre</button>
+            <button>XL</button> -->
+
+            <button class="submit" data-action="show_subs">Videre</button>
           </section>
 
-          <section id="step_subscription"></section>
+          <section id="step_subscription">
+            <div class="banner">
+              <div></div>
+              <h6>Vælg flere numre og spar mere:</h6>
+              <img src="img/iform_close.svg" alt="" />
+            </div>
+
+            <form>
+              <fieldset id="plan1" class="plan">
+                <legend>Dit valg:</legend>
+                <p><span class="bold">4 nr.</span> for 149 kr.</p>
+                <p class="pink">Spar 761 kr.</p>
+              </fieldset>
+
+              <fieldset id="plan2" class="plan">
+                <legend>Mest populære:</legend>
+                <p><span class="bold">4 nr.</span> for 149 kr.</p>
+                <p class="pink">Spar 761 kr.</p>
+              </fieldset>
+
+              <fieldset id="plan3" class="plan">
+                <p><span class="bold">4 nr.</span> for 149 kr.</p>
+                <p class="pink">Spar 761 kr.</p>
+              </fieldset>
+            </form>
+            <button class="submit">Videre</button>
+          </section>
 
           <section id="step_delivery"></section>
 
@@ -101,7 +146,7 @@
       <article id="CTA">
         <h3>149 kr.</h3>
         <p class="savings">Spar 761kr!</p>
-        <a class="bestil" href="">Bestil Nu</a>
+        <button class="bestil" data-action="cta">Bestil Nu</button>
         <p class="porto">+ 49,50 kr. i porto og eksp. I alt 198,50 kr.</p>
       </article>
       <article id="list">
