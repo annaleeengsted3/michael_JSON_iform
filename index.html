@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script href="https://kit.fontawesome.com/b24049f892.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
 
     <title>iForm</title>
@@ -38,7 +39,7 @@
         </section>
 
         <section class="flow_content">
-          <section id="step_size">
+          <section id="step_size" class="hide">
             <div class="banner">
               <div></div>
               <h6>ActiveFit FiberJakke</h6>
@@ -57,7 +58,75 @@
 
           <section id="step_delivery"></section>
 
-          <section id="step_payment"></section>
+          <section id="step_payment">
+            <div class="banner">
+              <div></div>
+              <h6>Vælg betalingsmetode</h6>
+              <img src="img/iform_close.svg" alt="" />
+            </div>
+
+            <div class="payment_checkout">
+              <div class="form-group form-group-box">
+                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                <label for="payment-option-visadankort" class="form-label">Mobilepay</label>
+                <div class="form-icons">
+                  <img src="img/logo-mobilepay.png" />
+                </div>
+              </div>
+              <div class="form-group form-group-box">
+                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                <label for="payment-option-visadankort" class="form-label">Visa/Dankort</label>
+                <div class="form-icons">
+                  <img src="img/logo-dankort.png" />
+                  <img src="img/logo-fbf.png" />
+                </div>
+              </div>
+              <div class="form-group form-group-box">
+                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                <label for="payment-option-visadankort" class="form-label">Kreditkort</label>
+                <div class="form-icons">
+                  <img src="img/logo-visa.png" />
+                  <img src="img/logo-mastercard.png" />
+                  <img src="img/logo-electron.png" />
+                  <img src="img/logo-maestro.png" />
+                </div>
+              </div>
+
+              <div class="form-group form-group-box">
+                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                <label for="payment-option-visadankort" class="form-label">Girokort</label>
+                <div class="form-icons">
+                  <p>+15 kr i afgift</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-group-bottom-spacing">
+              <input type="checkbox" id="checkout-agreement-card-terms" class="form-field form-field-inline" />
+              <label for="checkout-agreement-card-terms" class="form-label">Jeg har læst og accepteret vilkår for kortbetaling. <a href="">Læs mere</a></label>
+            </div>
+            <div class="form-group form-group-bottom-spacing">
+              <input type="checkbox" id="checkout-agreement-marketing" class="form-field form-field-inline" />
+              <label for="checkout-agreement-marketing" class="form-label"
+                >Ja tak, jeg vil gerne modtage spændende nyhedsbreve og tilbud om Medieprodukter, Bolig &amp; Livsstil, Sport &amp; Fritid, Rejser, Mode &amp; Skønhed, Dagligvarer, Events, Analyser og
+                Spil via brev, telefon og andre elektroniske medier f.eks e-mail og sms fra Bonnier Publications Koncernen. Du kan til hver en tid afmelde dig direkte markedsføring.
+                <a href="">Læs mere</a>
+              </label>
+            </div>
+            <div class="abonnement-list">
+              <ul>
+                <li>Efter tilbuddet fortsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
+                <li>I FORM udkommer 18 gange om året.</li>
+                <li>Abonnementet betales for 4 numre ad gangen, i alt 310&nbsp;kr.. (77,50&nbsp;kr. pr. nummer)</li>
+              </ul>
+            </div>
+            <div class="cart_summary">
+              <span>Totalpris inkl. levering</span>
+              <span class="total_price">248,50 kr.</span>
+            </div>
+            <div class="sikkerbetalingwrap">
+              <button class="sikkerbetaling">Gå til sikker betaling</button>
+            </div>
+          </section>
         </section>
       </section>
     </section>
