@@ -53,6 +53,7 @@ header img {
 }
 main {
   background-color: #f4f4f4;
+  padding-bottom: 2em;
 }
 #mainheading {
   margin-top: 2em;
@@ -202,4 +203,7 @@ li:before {
   background-size: contain;
   display: inline-flex;
   background-repeat: no-repeat;
+}
+article h4 {
+  margin: 2em 2em 2em 2em;
 }
