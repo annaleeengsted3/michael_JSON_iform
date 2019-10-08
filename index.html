@@ -55,7 +55,69 @@
 
           <section id="step_subscription"></section>
 
-          <section id="step_delivery"></section>
+          <section id="step_delivery">
+            <div class="banner">
+              <div><img src="img/backarrow2.png" alt="" /></div>
+              <h6>Angiv dine leveringsoplysninger</h6>
+              <img src="img/iform_close.svg" alt="" />
+            </div>
+            <div class="no-robots">
+              <form class="form">
+                <div class="row">
+                  <input class="field" type="text" id="firstName" placeholder="&nbsp;" required />
+                  <label for="firstName">
+                    <span>Fornavn</span>
+                  </label>
+                </div>
+
+                <div class="row">
+                  <input class="field" type="text" id="lastName" placeholder="&nbsp;" required />
+                  <label for="lastName">
+                    <span>Efternavn</span>
+                  </label>
+                </div>
+
+                <div class="row">
+                  <input class="field" type="text" id="address" placeholder="&nbsp;" required />
+                  <label for="address">
+                    <span>Adresse</span>
+                  </label>
+                </div>
+
+                <div class="row postal">
+                  <input class="field" type="text" id="postal" pattern="[0-9]{4}" placeholder="&nbsp;" placeholder="&nbsp;" required />
+                  <label for="postal">
+                    <span>Postnr.</span>
+                  </label>
+                </div>
+
+                <div class="row city">
+                  <input class="field" type="text" id="city" placeholder="&nbsp;" required />
+                  <label for="city">
+                    <span>By</span>
+                  </label>
+                </div>
+
+                <div class="row">
+                  <input class="field" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="&nbsp;" required />
+                  <label for="email">
+                    <span>E-mail</span>
+                  </label>
+                </div>
+
+                <div class="row">
+                  <input class="field" type="tel" id="phone" pattern="[0-9]{8}" placeholder="&nbsp;" required />
+                  <label for="phone">
+                    <span>Telefonnr.</span>
+                  </label>
+                </div>
+
+                <button class="submit">
+                  Videre til betaling
+                </button>
+              </form>
+            </div>
+          </section>
 
           <section id="step_payment"></section>
         </section>
