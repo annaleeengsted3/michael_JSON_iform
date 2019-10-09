@@ -34,7 +34,8 @@ function showDivs(n) {
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  document.querySelector("body").addEventListener("click", listClickController);
+  // document.querySelector("body").addEventListener("click", listClickController);
+  document.querySelector(`.bestil[data-action="cta"]`).addEventListener("click", showStepSize);
 }
 
 function listClickController(event) {
@@ -62,6 +63,14 @@ function showStepSize() {
   });
 }
 
+document.querySelector(`form[action="enter_size"]`).addEventListener("submit", event => {
+  event.preventDefault();
+
+  //her skal vi tjekke om en af size-knapperne er blevet trykket, og give besked til brugeren hvis den ikke er
+
+  showSubs();
+});
+
 function showSubs() {
   console.log("showSubs logged");
   document.querySelector("#step_size").style.display = "none";
@@ -77,6 +86,14 @@ function showSubs() {
     });
   });
 }
+
+document.querySelector(`form[action="choose_sub"]`).addEventListener("submit", event => {
+  event.preventDefault();
+
+  //lav validering for subs, no idea how
+
+  showDelivery();
+});
 
 //JOSE'S DEL
 function showDelivery() {

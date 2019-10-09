@@ -39,7 +39,7 @@
         </section>
 
         <section class="flow_content">
-          <section id="step_size" class="hide">
+          <section id="step_size">
             <div class="banner">
               <div></div>
               <h6>ActiveFit FiberJakke</h6>
@@ -48,29 +48,26 @@
             <img src="img/jacket.png" alt="ActiveFit FiberJacket" />
             <p>Vælg størrelse</p>
 
-            <div class="field">
-              <input type="radio" id="S" name="size" value="S" />
-              <label for="S">S</label>
-            </div>
-            <div class="field">
-              <input type="radio" id="M" name="size" value="M" />
-              <label for="M">M</label>
-            </div>
-            <div class="field">
-              <input type="radio" id="L" name="size" value="L" />
-              <label for="L">L</label>
-            </div>
-            <div class="field">
-              <input type="radio" id="XL" name="size" value="XL" />
-              <label for="XL">XL</label>
-            </div>
+            <form action="enter_size">
+              <div class="field">
+                <input type="radio" id="S" name="size" value="S" required />
+                <label for="S">S</label>
+              </div>
+              <div class="field">
+                <input type="radio" id="M" name="size" value="M" />
+                <label for="M">M</label>
+              </div>
+              <div class="field">
+                <input type="radio" id="L" name="size" value="L" />
+                <label for="L">L</label>
+              </div>
+              <div class="field">
+                <input type="radio" id="XL" name="size" value="XL" />
+                <label for="XL">XL</label>
+              </div>
 
-            <!-- <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button> -->
-
-            <button class="submit" data-action="show_subs">Videre</button>
+              <button class="submit" type="submit">Videre</button>
+            </form>
           </section>
 
           <section id="step_subscription">
@@ -80,25 +77,28 @@
               <img src="img/iform_close.svg" alt="" />
             </div>
 
-            <form>
+            <form action="choose_sub">
               <fieldset id="plan1" class="plan">
                 <legend>Dit valg:</legend>
                 <p><span class="bold">4 nr.</span> for 149 kr.</p>
                 <p class="pink">Spar 761 kr.</p>
+                <input type="radio" name="sub" required checked />
               </fieldset>
 
               <fieldset id="plan2" class="plan">
                 <legend>Mest populære:</legend>
                 <p><span class="bold">4 nr.</span> for 149 kr.</p>
                 <p class="pink">Spar 761 kr.</p>
+                <input type="radio" name="sub" />
               </fieldset>
 
               <fieldset id="plan3" class="plan">
                 <p><span class="bold">4 nr.</span> for 149 kr.</p>
                 <p class="pink">Spar 761 kr.</p>
+                <input type="radio" name="sub" />
               </fieldset>
+              <button class="submit" type="submit">Videre</button>
             </form>
-            <button class="submit" data-action="show_delivery">Videre</button>
           </section>
 
           <section id="step_delivery">
