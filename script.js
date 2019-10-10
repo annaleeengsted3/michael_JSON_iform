@@ -38,20 +38,20 @@ function init() {
   document.querySelector(`.bestil[data-action="cta"]`).addEventListener("click", showStepSize);
 }
 
-function listClickController(event) {
-  // controller for clicks
-  let element = event.target;
+// function listClickController(event) {
+//   // controller for clicks
+//   let element = event.target;
 
-  if (element.getAttribute("data-action") == "cta") {
-    showStepSize();
-  } else if (element.getAttribute("data-action") == "show_subs") {
-    showSubs();
-  } else if (element.getAttribute("data-action") == "show_delivery") {
-    showDelivery();
-  } else if (element.getAttribute("data-action") == "show_payment") {
-    showPayment();
-  }
-}
+//   if (element.getAttribute("data-action") == "cta") {
+//     showStepSize();
+//   } else if (element.getAttribute("data-action") == "show_subs") {
+//     showSubs();
+//   } else if (element.getAttribute("data-action") == "show_delivery") {
+//     showDelivery();
+//   } else if (element.getAttribute("data-action") == "show_payment") {
+//     showPayment();
+//   }
+// }
 
 function showStepSize() {
   console.log("showStepSize logged");
@@ -60,6 +60,17 @@ function showStepSize() {
   document.querySelector(".basket_wrapper").classList.add("slide");
   document.querySelector(".basket_wrapper").addEventListener("animationend", () => {
     document.querySelector(".basket_wrapper").style.bottom = "0";
+  });
+  const sizes = document.querySelectorAll("input[name=size]");
+  console.log(sizes);
+  sizes.forEach(s => {
+    s.addEventListener("input", e => {
+      console.log(e);
+      document
+        .querySelector(`form[action="enter_size"]`)
+        .querySelector("button")
+        .removeAttribute("disabled");
+    });
   });
 }
 
@@ -99,10 +110,12 @@ document.querySelector(`form[action="choose_sub"]`).addEventListener("submit", e
 function showDelivery() {
   document.querySelector("#step_subscription").style.display = "none";
   document.querySelector("#step_delivery").style.display = "block";
+  document.querySelector(`form[action="delivery"]`).addEventListener("submit", showPayment);
 }
 
 //NICKLAS' DEL
-function showPayment() {
+function showPayment(event) {
+  event.preventDefault();
   document.querySelector("#step_delivery").style.display = "none";
   document.querySelector("#step_payment").style.display = "block";
 }

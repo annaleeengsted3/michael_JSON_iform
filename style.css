@@ -361,7 +361,9 @@ article h4 {
   font-size: 1.2rem;
   border-radius: 5px;
 }
-
+#step_size form button:disabled {
+  background-color: grey;
+}
 #step_size .field {
   border: 2px solid #e9e8e8;
   background-color: white;
