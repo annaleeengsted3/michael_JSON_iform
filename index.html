@@ -45,7 +45,7 @@
             <div class="banner">
               <div></div>
               <h6>ActiveFit FiberJakke</h6>
-              <img src="img/iform_close.svg" alt="" />
+              <img src="img/iform_close.svg" alt="close" class="close" />
             </div>
             <img src="img/jacket.png" alt="ActiveFit FiberJacket" />
             <p>Vælg størrelse:</p>
@@ -74,9 +74,9 @@
 
           <section id="step_subscription">
             <div class="banner">
-              <div></div>
+              <div><img src="img/backarrow2.png" alt="back" class="back" /></div>
               <h6>Vælg flere numre og spar mere:</h6>
-              <img src="img/iform_close.svg" alt="" />
+              <img src="img/iform_close.svg" alt="close" class="close" />
             </div>
 
             <form action="choose_sub">
@@ -105,9 +105,9 @@
 
           <section id="step_delivery">
             <div class="banner">
-              <div><img src="img/backarrow2.png" alt="" /></div>
+              <div><img src="img/backarrow2.png" alt="back" class="back" /></div>
               <h6>Angiv dine leveringsoplysninger</h6>
-              <img src="img/iform_close.svg" alt="" />
+              <img src="img/iform_close.svg" alt="close" class="close" />
             </div>
             <div class="no-robots">
               <form class="form" action="delivery">
@@ -169,9 +169,9 @@
 
           <section id="step_payment">
             <div class="banner">
-              <div></div>
+              <div><img src="img/backarrow2.png" alt="back" class="back" /></div>
               <h6>Vælg betalingsmetode</h6>
-              <img src="img/iform_close.svg" alt="" />
+              <img src="img/iform_close.svg" alt="close" class="close" />
             </div>
 
             <form action="show_order_done">
@@ -181,6 +181,13 @@
                   <label for="payment-option-visadankort" class="form-label">Mobilepay</label>
                   <div class="form-icons">
                     <img src="img/logo-mobilepay.png" />
+                  </div>
+                </div>
+                <div class="form-group form-group-box">
+                  <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                  <label for="payment-option-visadankort" class="form-label">Apple Pay</label>
+                  <div class="form-icons">
+                    <img src="img/applepay.png" />
                   </div>
                 </div>
                 <div class="form-group form-group-box">

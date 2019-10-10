@@ -648,7 +648,7 @@ article h4 {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #5c1182;
+  background-color: grey;
   /*transition: width 250ms;*/
   z-index: -1;
 }
@@ -928,5 +928,19 @@ input:focus {
 }
 .sikkerbetalingwrap {
   text-align: center;
+  margin-bottom: 10vh;
+}
+.sikkerbetalingwrap button {
+  border-radius: 5px;
+  width: 90%;
+}
+
+#step_payment li {
+  margin: 20px;
+  font-size: 0.8rem;
+}
+#step_payment li::before {
+  content: "›";
+  background-image: none;
 }
 /********** NICKLAS SLUT ********/
