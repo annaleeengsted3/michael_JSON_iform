@@ -930,3 +930,43 @@ input:focus {
   text-align: center;
 }
 /********** NICKLAS SLUT ********/
+
+/********** DESKTOP START ********/
+@media screen and (min-width: 750px) {
+  header img {
+    width: 200px;
+  }
+
+  .betingelser {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 2vw;
+  }
+
+  #mainheading .column-right {
+    display: grid;
+    justify-content: right;
+    text-align: left;
+  }
+
+  #mainheading h1 {
+    font-size: 2rem;
+  }
+
+  #mainheading h2 {
+    font-size: 1.5rem;
+  }
+
+  #mainheading p {
+    font-size: 1rem;
+  }
+
+  #mainheading a {
+    font-size: 1rem;
+  }
+
+  #mainheading img {
+    width: 130px;
+  }
+}
+
+/********** DESKTOP SLUT ********/
