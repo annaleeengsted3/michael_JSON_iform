@@ -871,7 +871,6 @@ input:focus {
   pointer-events: none;
 }
 .form-icons img {
-  max-height: 2rem;
   margin-left: 0.5rem;
   width: 40px;
   vertical-align: center;
@@ -944,3 +943,88 @@ input:focus {
   background-image: none;
 }
 /********** NICKLAS SLUT ********/
+
+/********** DESKTOP START ********/
+@media screen and (min-width: 750px) {
+  header img {
+    width: 200px;
+  }
+
+  .betingelser {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 2vw;
+  }
+
+  .betingelser p {
+    font-size: 1rem;
+  }
+
+  #mainheading .column-right {
+    display: grid;
+    justify-content: right;
+    text-align: left;
+    grid-row-gap: 0.5vw;
+  }
+
+  #mainheading h1 {
+    font-size: 2rem;
+  }
+
+  #mainheading h2 {
+    font-size: 1.5rem;
+  }
+
+  #mainheading p {
+    font-size: 1rem;
+  }
+
+  #mainheading a {
+    font-size: 1rem;
+  }
+
+  #mainheading img {
+    width: 130px;
+  }
+
+  #desktop_landing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing_right {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
+
+  .bestil {
+    padding: 1vw 3vw 1vw 3vw;
+  }
+
+  #CTA {
+    margin-top: 5vw;
+  }
+
+  .basket_wrapper {
+    width: 50vw;
+    margin-left: 25vw;
+  }
+}
+
+/* This will change the stupid blue background-color, that Google Chrome will add automatically when using auto-fill/complete. But as this will hide our background-image with either the green checkmark or red warning when the input in the form is valid/unvalid */
+
+/* Change Autocomplete styles in Chrome found on https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  box-shadow: 0 0 0px 1000px none inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/********** DESKTOP SLUT ********/
