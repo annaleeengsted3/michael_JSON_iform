@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script href="https://kit.fontawesome.com/b24049f892.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
+    <meta name="robots" content="noindex" />
+    <script src="https://kea-alt-del.dk/iform/login.js"></script>
 
     <title>iForm</title>
   </head>
@@ -27,15 +29,15 @@
           >
         </section>
         <section class="basket">
-          <h6>Din Kurv</h6>
-          <p class="basket_item">4nr. iFORM + ActiveFit fiberjakke</p>
-          <p class="price">149,96 kr.</p>
+          <h6>Din Kurv:</h6>
+          <p class="basket_item"><span class="bold"> 4</span><span class="bold"> nr. iFORM</span> + <span class="italic">ActiveFit fiberjakke</span></p>
+          <p class="price sub-price">149,00 kr.</p>
           <p></p>
-          <p class="basket_item">Porto</p>
+          <p class="basket_item bold">Porto</p>
           <p class="price">49,50 kr.</p>
 
           <h5>Total:</h5>
-          <h5 class="price">198,50 kr.</h5>
+          <h5 class="price total_price">198,50 kr.</h5>
         </section>
 
         <section class="flow_content">
@@ -46,7 +48,7 @@
               <img src="img/iform_close.svg" alt="" />
             </div>
             <img src="img/jacket.png" alt="ActiveFit FiberJacket" />
-            <p>Vælg størrelse</p>
+            <p>Vælg størrelse:</p>
 
             <form action="enter_size">
               <div class="field">
@@ -78,26 +80,26 @@
             </div>
 
             <form action="choose_sub">
-              <fieldset id="plan1" class="plan">
-                <legend>Dit valg:</legend>
-                <p><span class="bold">4 nr.</span> for 149 kr.</p>
+              <fieldset id="plan1" class="plan" data-issues="4" data-price="149">
+                <legend></legend>
+                <p><span class="bold">4 nr.</span> for 149,00 kr.</p>
                 <p class="pink">Spar 761 kr.</p>
                 <input type="radio" name="sub" required checked />
               </fieldset>
 
-              <fieldset id="plan2" class="plan">
-                <legend>Mest populære:</legend>
-                <p><span class="bold">4 nr.</span> for 149 kr.</p>
-                <p class="pink">Spar 761 kr.</p>
+              <fieldset id="plan2" class="plan" data-issues="6" data-price="199">
+                <legend class="bold">Mest populære:</legend>
+                <p><span class="bold">6 nr.</span> for 199 kr.</p>
+                <p class="pink">Spar 866 kr.</p>
                 <input type="radio" name="sub" />
               </fieldset>
 
-              <fieldset id="plan3" class="plan">
-                <p><span class="bold">4 nr.</span> for 149 kr.</p>
-                <p class="pink">Spar 761 kr.</p>
+              <fieldset id="plan3" class="plan" data-issues="8" data-price="299">
+                <p><span class="bold">8 nr.</span> for 299 kr.</p>
+                <p class="pink">Spar 921 kr.</p>
                 <input type="radio" name="sub" />
               </fieldset>
-              <button class="submit" type="submit">Videre</button>
+              <button class="submit" type="submit">Videre til levering</button>
             </form>
           </section>
 
@@ -172,67 +174,69 @@
               <img src="img/iform_close.svg" alt="" />
             </div>
 
-            <div class="payment_checkout">
-              <div class="form-group form-group-box">
-                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
-                <label for="payment-option-visadankort" class="form-label">Mobilepay</label>
-                <div class="form-icons">
-                  <img src="img/logo-mobilepay.png" />
+            <form action="show_order_done">
+              <div class="payment_checkout">
+                <div class="form-group form-group-box">
+                  <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                  <label for="payment-option-visadankort" class="form-label">Mobilepay</label>
+                  <div class="form-icons">
+                    <img src="img/logo-mobilepay.png" />
+                  </div>
                 </div>
-              </div>
-              <div class="form-group form-group-box">
-                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
-                <label for="payment-option-visadankort" class="form-label">Visa/Dankort</label>
-                <div class="form-icons">
-                  <img src="img/logo-dankort.png" />
-                  <img src="img/logo-fbf.png" />
+                <div class="form-group form-group-box">
+                  <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                  <label for="payment-option-visadankort" class="form-label">Visa/Dankort</label>
+                  <div class="form-icons">
+                    <img src="img/logo-dankort.png" />
+                    <img src="img/logo-fbf.png" />
+                  </div>
                 </div>
-              </div>
-              <div class="form-group form-group-box">
-                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
-                <label for="payment-option-visadankort" class="form-label">Kreditkort</label>
-                <div class="form-icons">
-                  <img src="img/logo-visa.png" />
-                  <img src="img/logo-mastercard.png" />
-                  <img src="img/logo-electron.png" />
-                  <img src="img/logo-maestro.png" />
+                <div class="form-group form-group-box">
+                  <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                  <label for="payment-option-visadankort" class="form-label">Kreditkort</label>
+                  <div class="form-icons">
+                    <img src="img/logo-visa.png" />
+                    <img src="img/logo-mastercard.png" />
+                    <img src="img/logo-electron.png" />
+                    <img src="img/logo-maestro.png" />
+                  </div>
                 </div>
-              </div>
 
-              <div class="form-group form-group-box">
-                <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
-                <label for="payment-option-visadankort" class="form-label">Girokort</label>
-                <div class="form-icons">
-                  <p>+15 kr i afgift</p>
+                <div class="form-group form-group-box">
+                  <input type="radio" id="payment-option-visadankort" name="payment_option" required="required" class="form-field form-field-inline" />
+                  <label for="payment-option-visadankort" class="form-label">Girokort</label>
+                  <div class="form-icons">
+                    <p>+15 kr i afgift</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group form-group-bottom-spacing">
-              <input type="checkbox" id="checkout-agreement-card-terms" class="form-field form-field-inline" />
-              <label for="checkout-agreement-card-terms" class="form-label">Jeg har læst og accepteret vilkår for kortbetaling. <a href="">Læs mere</a></label>
-            </div>
-            <div class="form-group form-group-bottom-spacing">
-              <input type="checkbox" id="checkout-agreement-marketing" class="form-field form-field-inline" />
-              <label for="checkout-agreement-marketing" class="form-label"
-                >Ja tak, jeg vil gerne modtage spændende nyhedsbreve og tilbud om Medieprodukter, Bolig &amp; Livsstil, Sport &amp; Fritid, Rejser, Mode &amp; Skønhed, Dagligvarer, Events, Analyser og
-                Spil via brev, telefon og andre elektroniske medier f.eks e-mail og sms fra Bonnier Publications Koncernen. Du kan til hver en tid afmelde dig direkte markedsføring.
-                <a href="">Læs mere</a>
-              </label>
-            </div>
-            <div class="abonnement-list">
-              <ul>
-                <li>Efter tilbuddet fortsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
-                <li>I FORM udkommer 18 gange om året.</li>
-                <li>Abonnementet betales for 4 numre ad gangen, i alt 310&nbsp;kr.. (77,50&nbsp;kr. pr. nummer)</li>
-              </ul>
-            </div>
-            <div class="cart_summary">
-              <span>Totalpris inkl. levering</span>
-              <span class="total_price">248,50 kr.</span>
-            </div>
-            <div class="sikkerbetalingwrap">
-              <button type="submit" class="sikkerbetaling">Gå til sikker betaling</button>
-            </div>
+              <div class="form-group form-group-bottom-spacing">
+                <input type="checkbox" id="checkout-agreement-card-terms" class="form-field form-field-inline" required />
+                <label for="checkout-agreement-card-terms" class="form-label">Jeg har læst og accepteret vilkår for kortbetaling. <a href="">Læs mere</a></label>
+              </div>
+              <div class="form-group form-group-bottom-spacing">
+                <input type="checkbox" id="checkout-agreement-marketing" class="form-field form-field-inline" />
+                <label for="checkout-agreement-marketing" class="form-label"
+                  >Ja tak, jeg vil gerne modtage spændende nyhedsbreve og tilbud om Medieprodukter, Bolig &amp; Livsstil, Sport &amp; Fritid, Rejser, Mode &amp; Skønhed, Dagligvarer, Events, Analyser
+                  og Spil via brev, telefon og andre elektroniske medier f.eks e-mail og sms fra Bonnier Publications Koncernen. Du kan til hver en tid afmelde dig direkte markedsføring.
+                  <a href="">Læs mere</a>
+                </label>
+              </div>
+              <div class="abonnement-list">
+                <ul>
+                  <li>Efter tilbuddet fortsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
+                  <li>I FORM udkommer 18 gange om året.</li>
+                  <li>Abonnementet betales for 4 numre ad gangen, i alt 310&nbsp;kr.. (77,50&nbsp;kr. pr. nummer)</li>
+                </ul>
+              </div>
+              <div class="cart_summary">
+                <span>Totalpris inkl. levering</span>
+                <span class="total_price">248,50 kr.</span>
+              </div>
+              <div class="sikkerbetalingwrap">
+                <button type="submit" class="sikkerbetaling">Gå til sikker betaling</button>
+              </div>
+            </form>
           </section>
         </section>
       </section>
@@ -245,19 +249,21 @@
       </a>
     </header>
     <section class="betingelser">
+      <img src="img/checkbox-homemade.png" alt="checkmark" />
       <p>14 dages fortrydelsesret</p>
+      <img src="img/checkbox-homemade.png" alt="checkmark" />
       <p>Ingen binding</p>
     </section>
     <main>
       <article id="mainheading">
         <div>
-          <h1>4 nr. af I FORM</h1>
+          <h1>4 nr. af iFORM</h1>
           <h2>+ ActiveFit fiberjakke</h2>
         </div>
         <div class="column-right">
           <a href="">Læsernes vurdering</a>
 
-          <img src="img/stjerner.png" />
+          <img src="img/stjernerlilla.png" />
           <p>4.2 ud af 5 (1902)</p>
         </div>
       </article>
@@ -293,9 +299,10 @@
     <article>
       <h4>
         Mere om ActiveFit fiberjakken <br />
-        - til forår & efterår
+        <span class="smaller">- til forår & efterår</span>
       </h4>
-      <ul class="offerings">
+      <h5 class="value-jacket">Værdi: 600 kr.</h5>
+      <ul class="more-info">
         <li>Farve: sort</li>
         <li>Let figursyet pasform</li>
         <li>Lille krave med gråt for</li>

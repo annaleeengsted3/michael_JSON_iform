@@ -1,3 +1,5 @@
+// code for image slideshow from w3schools: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_dots2
+
 let slideIndex = 1;
 showDivs(slideIndex);
 
@@ -34,32 +36,22 @@ function showDivs(n) {
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  // document.querySelector("body").addEventListener("click", listClickController);
   document.querySelector(`.bestil[data-action="cta"]`).addEventListener("click", showStepSize);
 }
 
-// function listClickController(event) {
-//   // controller for clicks
-//   let element = event.target;
-
-//   if (element.getAttribute("data-action") == "cta") {
-//     showStepSize();
-//   } else if (element.getAttribute("data-action") == "show_subs") {
-//     showSubs();
-//   } else if (element.getAttribute("data-action") == "show_delivery") {
-//     showDelivery();
-//   } else if (element.getAttribute("data-action") == "show_payment") {
-//     showPayment();
-//   }
-// }
-
 function showStepSize() {
   console.log("showStepSize logged");
+  //clean:
+  // document.querySelector("#step_payment").style.display = "none";
+  // document.querySelector("#step_size").style.display = "grid";
+
   document.querySelector(".basket_bg").style.display = "block";
   // document.querySelector(".basket_wrapper").style.bottom = "0";
   document.querySelector(".basket_wrapper").classList.add("slide");
+  document.querySelector(".basket_wrapper").style.display = "block";
   document.querySelector(".basket_wrapper").addEventListener("animationend", () => {
     document.querySelector(".basket_wrapper").style.bottom = "0";
+    document.querySelector("main").style.display = "none";
   });
   const sizes = document.querySelectorAll("input[name=size]");
   console.log(sizes);
@@ -83,17 +75,21 @@ document.querySelector(`form[action="enter_size"]`).addEventListener("submit", e
 });
 
 function showSubs() {
-  console.log("showSubs logged");
   document.querySelector("#step_size").style.display = "none";
   document.querySelector("#step_subscription").style.display = "grid";
 
   document.querySelectorAll(".plan").forEach(plan => {
     plan.addEventListener("click", function() {
-      console.log(this);
+      console.log(this.dataset);
+      document.querySelector(".basket_item>span").textContent = this.dataset.issues;
+      document.querySelector(".sub-price").textContent = this.dataset.price + ",00 kr.";
+      const total = parseInt(this.dataset.price, 10) + 49.5;
+      document.querySelector(".total_price").textContent = total + "0 kr.";
       document.querySelectorAll(".plan").forEach(plan => {
-        plan.style.border = "2px groove var(--color-bggray)";
+        plan.style.border = "3px groove var(--color-bggray)";
       });
-      this.style.border = "2px groove var(--color-purple)";
+      this.style.border = "3px groove var(--color-purple)";
+      console.log(this);
     });
   });
 }
@@ -110,6 +106,8 @@ document.querySelector(`form[action="choose_sub"]`).addEventListener("submit", e
 function showDelivery() {
   document.querySelector("#step_subscription").style.display = "none";
   document.querySelector("#step_delivery").style.display = "block";
+  document.querySelector(".step2 img").src = "img/checkbox-homemade.png";
+  document.querySelector(".step2 p").style.color = "var(--color-green)";
   document.querySelector(`form[action="delivery"]`).addEventListener("submit", showPayment);
 }
 
@@ -118,4 +116,11 @@ function showPayment(event) {
   event.preventDefault();
   document.querySelector("#step_delivery").style.display = "none";
   document.querySelector("#step_payment").style.display = "block";
+  document.querySelector(".step3 img").src = "img/checkbox-homemade.png";
+  document.querySelector(".step3 p").style.color = "var(--color-green)";
 }
+
+document.querySelector(`form[action="show_order_done"]`).addEventListener("submit", event => {
+  event.preventDefault();
+  location.reload();
+});
