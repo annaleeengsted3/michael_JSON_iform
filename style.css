@@ -4,6 +4,22 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* This will change the stupid blue background-color, that Google Chrome will add automatically when using auto-fill/complete. But as this will hide our background-image with either the green checkmark or red warning when the input in the form is valid/unvalid */
+
+/* Change Autocomplete styles in Chrome found on https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  box-shadow: 0 0 0px 1000px none inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 button,
 input {
   -webkit-appearance: none;
